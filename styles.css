@@ -14,6 +14,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ========== HERO SECTION ========== */
 .hero {
   background-color: #EFEBE7;
   padding: 5rem 2rem 2rem;
@@ -75,6 +76,7 @@ html {
     font-size: 1rem;
   }
 }
+
 .subtexto {
   font-size: 1.1rem;
   font-style: italic;
@@ -82,22 +84,24 @@ html {
   margin-bottom: 1rem;
 }
 
-
-
-.cta {
+/* ========== BOTONES CTA ========== */
+.cta, .toggle-carrusel {
   background-color: #7B7F32;
   color: #fff;
   padding: 0.8rem 1.5rem;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.cta:hover {
+.cta:hover, .toggle-carrusel:hover {
   background-color: #5e642b;
 }
 
+/* ========== BLOQUES GENERALES ========== */
 .bloque-full {
   display: flex;
   justify-content: center;
@@ -142,9 +146,141 @@ html {
   object-fit: cover;
 }
 
+/* === CARTERAS === */
+.bloque-carteras {
+  padding: 4rem 2rem;
+}
+
+.bloque-carteras .contenido-principal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bloque-carteras .contenido-principal .texto {
+  flex: 1;
+  min-width: 280px;
+}
+
+.bloque-carteras .contenido-principal .texto h2 {
+  font-size: 3rem;
+  font-family: 'Fredoka', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.bloque-carteras .contenido-principal .texto p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.bloque-carteras .contenido-principal .imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.bloque-carteras .contenido-principal .imagen img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.bloque-carteras.ocultar .contenido-principal {
+  display: none;
+}
+
+/* === CARRUSEL === */
+#carrusel-carteras {
+  display: none;
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 2rem 1rem 1rem;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+  max-height: 0;
+}
+
+#carrusel-carteras.activo {
+  display: flex;
+  opacity: 1;
+  max-height: 1000px;
+}
+
+.carrusel-contenedor {
+  display: flex;
+  gap: 1rem;
+}
+
+.carrusel-item {
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.carrusel-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: auto;
+}
+
+/* Ocultar scrollbar visualmente pero permitir scroll */
+#carrusel-carteras {
+  scrollbar-width: none; /* Firefox */
+}
+
+#carrusel-carteras::-webkit-scrollbar {
+  display: none;
+}
+
+/* === BOTÓN === */
+.toggle-carrusel {
+  background-color: #7B7F32;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-carrusel:hover {
+  background-color: #5e642b;
+}
+
+@media (max-width: 768px) {
+  .bloque-carteras .contenido-principal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bloque-carteras .contenido-principal .imagen img {
+    max-width: 300px;
+  }
+
+  #carrusel-carteras {
+    padding: 1rem 0.5rem;
+  }
+}
+
+
+/* ========== VALORES ========== */
 .valores {
   padding: 3rem 1rem;
-  background-color:#EFEBE7;
+  background-color: #EFEBE7;
   text-align: center;
 }
 
@@ -162,6 +298,8 @@ html {
   justify-content: center;
   gap: 1.5rem;
 }
+
+/* ========== FOOTER ========== */
 footer {
   background-color: #a6a6db;
   color: #fff;
@@ -181,88 +319,7 @@ footer .social a:hover {
   color: #ffffff;
 }
 
-@media(min-width: 768px) {
-  .hero-content {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  .hero-texto {
-    flex: 1;
-    padding-right: 2rem;
-  }
-
-  .hero-imagen {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #EFEBE7;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
-  z-index: 1000;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: #7B7F32;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-nav a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #27272A;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #7B7F32;
-}
-
-.subtitulo {
-  font-size: 1rem;
-  letter-spacing: 1px;
-  color: #7B7F32;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.scroll-down {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  color: #7B7F32;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
+/* ========== CONTACTO ========== */
 .contacto {
   background-color: #EFEBE7;
   padding: 4rem 2rem;
@@ -310,10 +367,7 @@ nav a:hover {
   box-shadow: 0 0 0 2px rgba(123, 127, 50, 0.2);
 }
 
-.contacto button.cta {
-  align-self: center;
-  cursor: pointer;
-}
+/* ========== EDITORIAL ========== */
 .editorial {
   background: linear-gradient(-6deg, #C5AECF 55%, #EFEBE7 45%);
   padding: 6rem 2rem;
@@ -358,7 +412,56 @@ nav a:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-@media(max-width: 768px) {
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #EFEBE7;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #7B7F32;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #27272A;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #7B7F32;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .editorial-content {
     flex-direction: column;
     text-align: center;
@@ -371,43 +474,57 @@ nav a:hover {
   .editorial-texto p {
     margin: 0 auto 2rem;
   }
+
+  .carrusel-item {
+    width: 140px;
+  }
+}
+/* Eliminar scroll horizontal inesperado */
+html, body {
+  overflow-x: hidden;
 }
 
-.bloque-carteras .contenido-principal {
-  display: flex;
-  flex-wrap: wrap;
+/* Asegurar que el carrusel no se desborde */
+/* Contenedor envolvente del carrusel y las flechas */
+.carrusel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  display: none; /* Oculto por defecto */
   align-items: center;
-  gap: 3rem;
+  justify-content: center;
 }
 
-.bloque-carteras.ocultar .contenido-principal {
+.carrusel-wrapper.activo {
+  display: flex;
+}
+
+.carrusel-horizontal {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  scroll-behavior: smooth;
+  flex: 1;
+  max-width: 100%;
+}
+
+.carrusel-horizontal::-webkit-scrollbar {
   display: none;
 }
-
-.carrusel-desplegable {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease;
-}
-
-.carrusel-desplegable.activo {
-  max-height: 1000px; 
-  margin-top: 2rem;
-}
-
-
-.carrusel-contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+.carrusel-horizontal {
+  scrollbar-width: none;
 }
 
 .carrusel-item {
-  width: 180px;
-  border-radius: 12px;
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -415,4 +532,39 @@ nav a:hover {
   width: 100%;
   display: block;
   object-fit: cover;
+  height: auto;
+}
+
+.flecha {
+  font-size: 1.5rem;
+  background: #7B7F32;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.flecha:hover {
+  background: #5e642b;
+}
+
+.flecha.izquierda {
+  margin-right: 0.5rem;
+}
+
+.flecha.derecha {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .flecha {
+    display: none;
+  }
 }

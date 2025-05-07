@@ -48,7 +48,8 @@
   <section class="bloque-full" style="background-color:#C5AECF;" id="carteras">
     <div class="bloque-content bloque-carteras">
       
-      <div class="contenido-principal" data-aos="fade-right">
+      <!-- Contenido principal -->
+      <div class="contenido-principal">
         <div class="texto">
           <h2>Carteras</h2>
           <p>Diseños tejidos en trapillo que combinan estilo, textura y conciencia artesanal.</p>
@@ -59,24 +60,31 @@
         </div>
       </div>
   
-      <div class="carrusel-desplegable" id="carrusel-carteras">
-        <div class="carrusel-contenedor">
-          <div class="carrusel-item"><img src="images/carteras/cartera1.webp" alt="Cartera 1"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera2.webp" alt="Cartera 2"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera3.webp" alt="Cartera 3"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera4.webp" alt="Cartera 4"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera5.webp" alt="Cartera 5"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera6.webp" alt="Cartera 6"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera7.webp" alt="Cartera 1"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera8.webp" alt="Cartera 2"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera9.webp" alt="Cartera 3"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera10.webp" alt="Cartera 4"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera11.webp" alt="Cartera 5"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera12.webp" alt="Cartera 6"></div>
-          <div class="carrusel-item"><img src="images/carteras/cartera13.webp" alt="Cartera 6"></div>
-        </div>
-      </div>
-  
+      <!-- Carrusel horizontal (inicialmente oculto) -->
+<!-- Carrusel horizontal (inicialmente oculto) -->
+<div class="carrusel-wrapper" id="carrusel-wrapper">
+  <button class="flecha izquierda" id="scroll-left">&#8592;</button>
+
+  <div class="carrusel-horizontal" id="carrusel-carteras">
+    <div class="carrusel-item"><img src="images/carteras/cartera1.webp" alt="Cartera 1"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera2.webp" alt="Cartera 2"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera3.webp" alt="Cartera 3"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera4.webp" alt="Cartera 4"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera5.webp" alt="Cartera 5"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera6.webp" alt="Cartera 6"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera7.webp" alt="Cartera 1"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera8.webp" alt="Cartera 2"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera9.webp" alt="Cartera 3"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera10.webp" alt="Cartera 4"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera11.webp" alt="Cartera 5"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera12.webp" alt="Cartera 6"></div>
+    <div class="carrusel-item"><img src="images/carteras/cartera13.webp" alt="Cartera 6"></div>
+  </div>
+
+  <button class="flecha derecha" id="scroll-right">&#8594;</button>
+</div>
+
+      
     </div>
   </section>
   
@@ -110,7 +118,7 @@
   <section class="bloque-full" style="background-color:#EFEBE7;">
     <div class="bloque-content reverse">
       <div class="imagen" data-aos="fade-right">
-        <img src="images/LaptopSleeve3.webp" alt="Laptop Sleeve" loading="lazy">
+        <img src="images/sleeves/sleeve3.webp" alt="Laptop Sleeve" loading="lazy">
       </div>
       <div class="texto" data-aos="fade-left">
         <h2>Sleeves</h2>
@@ -123,7 +131,7 @@
   <section class="bloque-full" style="background-color:#C5AECF;" id="portavasos">
     <div class="bloque-content reverse">
       <div class="imagen" data-aos="fade-right">
-        <img src="images/Portavasos1.webp" alt="Portavasos" loading="lazy">
+        <img src="images/portavasos/Portavasos1.webp" alt="Portavasos" loading="lazy">
       </div>
       <div class="texto" data-aos="fade-left">
         <h2>Portavasos</h2>
@@ -182,17 +190,32 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const boton = document.querySelector('.toggle-carrusel');
-      const carrusel = document.getElementById('carrusel-carteras');
-      const bloque = document.querySelector('.bloque-carteras');
-  
-      boton.addEventListener('click', () => {
-        carrusel.classList.toggle('activo');
-        bloque.classList.toggle('ocultar');
-      });
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  const boton = document.querySelector('.toggle-carrusel');
+  const carruselWrapper = document.getElementById('carrusel-wrapper');
+  const carrusel = document.getElementById('carrusel-carteras');
+
+  boton.addEventListener('click', () => {
+    const activo = carruselWrapper.classList.toggle('activo');
+    carrusel.classList.toggle('activo');
+    boton.textContent = activo ? 'Ver menos' : 'Ver más';
+  });
+
+  document.getElementById('scroll-left').addEventListener('click', () => {
+    carrusel.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+
+  document.getElementById('scroll-right').addEventListener('click', () => {
+    carrusel.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+});
+
+
   </script>
+  
+  
+  
+  
   
 </body>
 </html>
