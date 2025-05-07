@@ -7,45 +7,146 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Puedes buscar variantes similares a BOLDFINGER y WAGHU si no están en Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/28fd048d05.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Hecho a mano, con corazón</h1>
-      <p>Conectamos con lo que importa: lo auténtico, lo humano, lo tuyo.</p>
-      <a href="#productos" class="cta">Descubrir</a>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Bubi Crochet</div>
+      <nav>
+        <ul>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#valores">Valores</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="hero-img">
-      <img src="images/cartera-destacada.jpg" alt="Producto destacado">
-    </div>
-  </section>
+  </header>
+  
 
-  <section id="productos" class="productos">
-    <div class="bloque">
-      <img src="images/cartera.jpg" alt="Carteras">
-      <div class="bloque-texto">
-        <h2>Carteras</h2>
-        <a href="#" class="cta">Ver más</a>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-texto">
+        <h1>Hecho a mano, con corazón</h1>
+        <p class="subtexto">Pequeños detalles que cuentan grandes historias.</p>
+        <p>
+          Cada pieza está cuidadosamente tejida para transmitir ternura, estilo y autenticidad. 
+          En Bubi Crochet creemos en la belleza de lo simple y lo hecho con amor.
+        </p>
+        <a href="#productos" class="cta">Descubrir</a>
+      </div>
+      <div class="hero-imagen">
+        <img src="images/cartera-destacada.png" alt="Cartera destacada">
       </div>
     </div>
-    <div class="bloque">
-      <img src="images/llavero.jpg" alt="Llaveros">
-      <div class="bloque-texto">
-        <h2>Llaveros</h2>
-        <a href="#" class="cta">Ver más</a>
+  </section>
+  
+
+  <section class="bloque-full" style="background-color:#C5AECF;" id="carteras">
+    <div class="bloque-content bloque-carteras">
+      
+      <div class="contenido-principal" data-aos="fade-right">
+        <div class="texto">
+          <h2>Carteras</h2>
+          <p>Diseños tejidos en trapillo que combinan estilo, textura y conciencia artesanal.</p>
+          <button class="cta toggle-carrusel">Ver más</button>
+        </div>
+        <div class="imagen imagen-principal">
+          <img src="images/cartera.webp" alt="Cartera">
+        </div>
       </div>
+  
+      <div class="carrusel-desplegable" id="carrusel-carteras">
+        <div class="carrusel-contenedor">
+          <div class="carrusel-item"><img src="images/carteras/cartera1.webp" alt="Cartera 1"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera2.webp" alt="Cartera 2"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera3.webp" alt="Cartera 3"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera4.webp" alt="Cartera 4"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera5.webp" alt="Cartera 5"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera6.webp" alt="Cartera 6"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera7.webp" alt="Cartera 1"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera8.webp" alt="Cartera 2"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera9.webp" alt="Cartera 3"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera10.webp" alt="Cartera 4"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera11.webp" alt="Cartera 5"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera12.webp" alt="Cartera 6"></div>
+          <div class="carrusel-item"><img src="images/carteras/cartera13.webp" alt="Cartera 6"></div>
+        </div>
+      </div>
+  
     </div>
-    <div class="bloque">
-      <img src="images/decoracion.jpg" alt="Decoración">
-      <div class="bloque-texto">
+  </section>
+  
+
+  
+  <section class="bloque-full" style="background-color:#EFEBE7;">
+    <div class="bloque-content">
+      <div class="texto" data-aos="fade-right">
         <h2>Decoración</h2>
+        <p>Piezas que llenan tu espacio de calidez, color y personalidad artesanal.</p>
+        <a href="#" class="cta">Ver más</a>
+      </div>
+      <div class="imagen" data-aos="fade-left">
+        <img src="images/decoracion.webp" alt="Decoración" loading="lazy">
+      </div>
+    </div>
+  </section>
+  
+  <section class="bloque-full" style="background-color:#C5AECF;">
+    <div class="bloque-content reverse">
+      <div class="imagen" data-aos="fade-right">
+        <img src="images/llavero.webp" alt="Llavero" loading="lazy">
+      </div>
+      <div class="texto" data-aos="fade-left">
+        <h2>Llaveros</h2>
+        <p>Amigurumis únicos en miniatura: detalles adorables que llevás con vos a todas partes.</p>
         <a href="#" class="cta">Ver más</a>
       </div>
     </div>
   </section>
+  <section class="bloque-full" style="background-color:#EFEBE7;">
+    <div class="bloque-content reverse">
+      <div class="imagen" data-aos="fade-right">
+        <img src="images/LaptopSleeve3.webp" alt="Laptop Sleeve" loading="lazy">
+      </div>
+      <div class="texto" data-aos="fade-left">
+        <h2>Sleeves</h2>
+        <p>Estilo y protección artesanal para tu laptop o iPad. Tejidos con detalle, pensados para acompañarte todos los días.</p>
+        <a href="#" class="cta">Ver más</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="bloque-full" style="background-color:#C5AECF;" id="portavasos">
+    <div class="bloque-content reverse">
+      <div class="imagen" data-aos="fade-right">
+        <img src="images/Portavasos1.webp" alt="Portavasos" loading="lazy">
+      </div>
+      <div class="texto" data-aos="fade-left">
+        <h2>Portavasos</h2>
+        <p>Detalles tejidos que alegran cada momento: funcionales, coloridos y con mucha personalidad.</p>
+        <a href="#" class="cta">Ver más</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="editorial">
+    <div class="editorial-content" data-aos="fade-up">
+      <div class="editorial-texto">
+        <h2>Lo hecho a mano no solo se ve, se siente.</h2>
+        <p>Una colección que celebra la autenticidad, la dedicación y los detalles que cuentan historias.</p>
+        <a href="#productos" class="cta">Ver colección</a>
+      </div>
+      <div class="editorial-imagen">
+        <img src="images/editorial-producto.png" alt="Producto destacado">
+      </div>
+    </div>
+  </section>  
+  
 
   <section class="valores">
     <h2>Nuestros Valores</h2>
@@ -57,13 +158,41 @@
     </ul>
   </section>
 
+  <section class="contacto" id="contacto">
+    <div class="contacto-container" data-aos="fade-up">
+      <h2>¿Querés escribirnos?</h2>
+      <p>Completá el formulario y te responderemos lo antes posible.</p>
+      <form>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+        <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+        <button type="submit" class="cta">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+  
   <footer>
     <p>&copy; 2025 Bubi Crochet</p>
     <div class="social">
-      <a href="#">Instagram</a>
-      <a href="#">Contacto</a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const boton = document.querySelector('.toggle-carrusel');
+      const carrusel = document.getElementById('carrusel-carteras');
+      const bloque = document.querySelector('.bloque-carteras');
+  
+      boton.addEventListener('click', () => {
+        carrusel.classList.toggle('activo');
+        bloque.classList.toggle('ocultar');
+      });
+    });
+  </script>
+  
 </body>
 </html>
